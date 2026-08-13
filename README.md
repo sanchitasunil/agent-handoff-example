@@ -1,4 +1,4 @@
-# Agent Handoff — a working reference
+# Agent Handoff
 
 One agent answers general questions. When the caller asks about something
 specific, it hands the **live conversation** to a second agent that specialises
