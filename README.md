@@ -10,12 +10,8 @@ caller -> triage -> matches a specialist? -> yes -> specialist takes over
                                           -> no  -> triage keeps helping
 ```
 
-This is different from escalating to a human. The call keeps going; only the
+This is different from escalating to a human. The call keeps going, only the
 agent changes.
-
-Built on the [Murf LiveKit starter](https://github.com/murf-ai/murf-livekit-starter),
-using Murf Falcon for speech. Verified on **livekit-agents 1.4.5**.
-No dependencies beyond what the starter already installs.
 
 ---
 
@@ -252,21 +248,6 @@ tool reads it.
 | Transfers when it shouldn't | Same cause | Make `when_to_use` narrower |
 | Specialist asks the caller to repeat | `caller_intent` and `facts` arrived empty | Check the tool writes to `ctx` before returning |
 | Caller bounces between agents | Working as designed | Lower `MAX_HANDOFFS` |
-
----
-
-## Showing it off
-
-Six beats, about a minute:
-
-1. Ask a general question. Triage answers, no transfer.
-2. Ask something billing-related.
-3. Triage names the team out loud before transferring.
-4. The specialist references what you already said — it never asks twice.
-5. Ask something off-topic. It hands you back to triage.
-6. Show the terminal. The `[handoff]` lines are the route the call took.
-
-Do one beat in Hindi to show the language survives the transfer.
 
 ---
 
